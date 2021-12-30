@@ -60,6 +60,9 @@ class _SignInPageState extends State<SignInPage> {
         TextFormField(
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
+          obscureText: true,
+          enableSuggestions: false,
+          autocorrect: false,
           controller: _passwordcontroller,
           decoration: InputDecoration(
             labelText: 'Password',

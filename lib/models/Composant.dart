@@ -1,11 +1,12 @@
 // ignore_for_file: empty_constructor_bodies, non_constant_identifier_names, duplicate_ignore, file_names, unnecessary_this
 
+import 'package:myproject/Data/familleOperation.dart';
+
 class Composant {
   int? id;
   late String name;
   int? quantity;
   int? famille_id;
-
   Composant({this.id, required this.name, this.quantity, this.famille_id});
   Composant.fromMap(dynamic obj) {
     this.id = obj['id'];

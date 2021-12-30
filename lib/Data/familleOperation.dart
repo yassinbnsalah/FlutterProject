@@ -26,6 +26,18 @@ class FamilleOperations {
     return familles;
   }
 
+  Future<Famille> getFamilleById(int id) async {
+    final db = await dbProvider.database;
+    List<Map<String, dynamic>> allRows = await db.query(
+      "FAMILLE",
+      where: '${id} = ?',
+      whereArgs: [id],
+    );
+    List<Famille> familles =
+        allRows.map((famille) => Famille.fromMap(famille)).toList();
+    return familles.first;
+  }
+
   deleteFamilleID(int id) async {
     final db = await dbProvider.database;
     await db.execute('''

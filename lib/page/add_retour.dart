@@ -7,6 +7,7 @@ import 'package:myproject/Widget/emprunte_retour_dropdown.dart';
 import 'package:myproject/Widget/navigation_drawer.dart';
 import 'package:myproject/models/Emprunte.dart';
 import 'package:myproject/models/Retour.dart';
+import 'package:myproject/page/liste_retour.dart';
 
 class AddRetourPage extends StatefulWidget {
   AddRetourPage({Key? key}) : super(key: key);
@@ -92,6 +93,9 @@ class _AddRetourPageState extends State<AddRetourPage> {
                   _dateTime.year.toString(),
               etat: _retourController.text);
           retourOperation.createRetour(retour);
+          await Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => RetourPage()),
+          );
         },
         child: Icon(Icons.add),
       ),
