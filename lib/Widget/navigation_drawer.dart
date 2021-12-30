@@ -17,6 +17,9 @@ class NavigationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size mediaQuery = MediaQuery.of(context).size;
+    double sidebarSize = mediaQuery.width * 0.65;
+    double menuContainerHeight = mediaQuery.height / 2;
     return Drawer(
         child: Material(
             color: Colors.black,
@@ -24,7 +27,23 @@ class NavigationDrawer extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(24.0, 80, 24, 0),
               child: Column(
                 children: [
-                  headerWidget(),
+                  Container(
+                    height: mediaQuery.height * 0.25,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Image.network(
+                            'https://www.iirld.com/work/img/admin.png',
+                            width: sidebarSize / 2,
+                          ),
+                          Text(
+                            "admin",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   const SizedBox(
                     height: 40,
                   ),
